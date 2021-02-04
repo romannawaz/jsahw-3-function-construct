@@ -8,15 +8,13 @@ CoffeeMake.prototype = {
     }
 }
 
-let coffeeMake = new CoffeeMake();
-
 function DripCoffeeMaker(model) {
     this.model = model;
     this.createCoffee = function () {
         return 'Create Drip Coffee';
     }
 }
-DripCoffeeMaker.prototype = coffeeMake;
+DripCoffeeMaker.prototype = Object.create(CoffeeMake.prototype);
 
 let dripCoffeeMaker = new DripCoffeeMaker('Drip Coffee');
 
@@ -30,7 +28,7 @@ function CorabCoffeeMaker(model) {
         return 'Create Corab Coffee';
     }
 }
-CorabCoffeeMaker.prototype = coffeeMake;
+CorabCoffeeMaker.prototype = Object.create(CoffeeMake.prototype);
 
 let corabCoffeeMaker = new CorabCoffeeMaker('Corab Coffee');
 
@@ -44,7 +42,7 @@ function CoffeeMachine(model) {
         return 'Coffee Machine';
     }
 }
-CoffeeMachine.prototype = coffeeMake;
+CoffeeMachine.prototype = Object.create(CoffeeMake.prototype);
 
 let coffeeMachine = new CoffeeMachine('Coffee Machine');
 
